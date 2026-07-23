@@ -2,5 +2,17 @@
 
 {% block content %}
 
+{% for event in events %}
+<div class="card mb-4">
+    <img src="{{ event.img.url }}" class="card-img-top" alt="Event">
 
+    <div class="card-body">
+        <h5>{{ event.name }}</h5>
+        <p>{{ event.description }}</p>
+        <p><strong>Date:</strong> {{ event.event_date }}</p>
+        <p><strong>Time:</strong> {{ event.event_time }}</p>
+        <button>BOOK NOW </button>
+    </div>
+</div>
+{% endfor %}
 {% endblock%}

@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from .models import Event
 
 # Create your views here.
+   
 def index(request):
-    return render(request, 'index.html')
+    return render(request, "index.html")
 
 def events(request):
-    return render(request, 'events.html')
+    events = Event.objects.all()
+    return render(request, 'events.html', {'events': events})
 
 def contact(request):
     return render(request, 'contact.html')
