@@ -1,6 +1,91 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0">
+
+                <div class="row g-0">
+
+                    <!-- Event Image -->
+                    <div class="col-md-5">
+                        <img src="{{ event.img.url }}"
+                             class="img-fluid h-100 w-100"
+                             style="object-fit: cover;"
+                             alt="{{ event.name }}">
+                    </div>
+
+                    <!-- Booking Details -->
+                    <div class="col-md-7">
+                        <div class="card-body">
+
+                            <h2 class="card-title">{{ event.name }}</h2>
+
+                            <p class="text-muted">
+                                {{ event.description }}
+                            </p>
+
+                            <hr>
+
+                            <p><strong>📅 Date:</strong> {{ event.event_date }}</p>
+                            <p><strong>⏰ Time:</strong> {{ event.event_time }}</p>
+                            <p><strong>📍 Location:</strong> {{ event.location }}</p>
+
+                            <form method="POST">
+                                {% csrf_token %}
+
+                                <div class="mb-3">
+                                    <label class="form-label">Number of Tickets</label>
+                                    <input type="number"
+                                           class="form-control"
+                                           min="1"
+                                           max="10"
+                                           value="1"
+                                           name="tickets">
+                                </div>
+                                <div class="card mt-4 shadow-sm">
+    <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Terms & Conditions</h5>
+    </div>
+
+    <div class="card-body">
+        <ul class="mb-0">
+            <li>Tickets once booked are non-refundable and non-transferable.</li>
+            <li>Please carry a valid photo ID along with your booking confirmation.</li>
+            <li>Entry will be denied after the event starts unless permitted by the organizer.</li>
+            <li>Outside food, beverages, and prohibited items are not allowed.</li>
+            <li>The organizer reserves the right to change the event schedule or venue if necessary.</li>
+            <li>Photography and videography may be conducted during the event.</li>
+            <li>The organizer is not responsible for any personal belongings lost during the event.</li>
+            <li>Please follow all venue rules and staff instructions.</li>
+        </ul>
+    </div>
+</div>
+<div class="form-check mt-4">
+    <input class="form-check-input" type="checkbox" id="agree" required>
+    <label class="form-check-label" for="agree">
+        I have read and agree to the Terms & Conditions.
+    </label>
+</div>
+
+                                <button type="submit" class="btn btn-success w-100">
+                                    Book Now
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 {% endblock%}

@@ -1,18 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
-{% for event in events %}
-<div class="card mb-4">
-    <img src="{{ event.img.url }}" class="card-img-top" alt="Event">
+<div class="container py-5">
+    <div class="row g-4">
 
-    <div class="card-body">
-        <h5>{{ event.name }}</h5>
-        <p>{{ event.description }}</p>
-        <p><strong>Date:</strong> {{ event.event_date }}</p>
-        <p><strong>Time:</strong> {{ event.event_time }}</p>
-        <button>BOOK NOW </button>
+        {% for event in events %}
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ event.img.url }}" class="card-img-top event-img" alt="{{ event.name }}">
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ event.name }}</h5>
+
+                    <p class="card-text text-muted">
+                        {{ event.description|truncatewords:20 }}
+                    </p>
+                    <a href="{% url 'event_detail' event.id %}" class="btn btn-primary mt-auto">
+                    See More
+                    </a>
+
+                    <ul class="list-unstyled mb-3">
+                        <li><strong>📅 Date:</strong> {{ event.event_date }}</li>
+                        <li><strong>📍 Location:</strong> {{ event.location }}</li>
+                    </ul>
+
+                    <a href="{% url 'booking' %}" class=""btn btn-secondary">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
     </div>
 </div>
-{% endfor %}
-{% endblock%}
+
+{% endblock %}

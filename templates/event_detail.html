@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="card shadow-lg">
+        <img src="{{ event.img.url }}" class="img-fluid" alt="{{ event.name }}">
+
+        <div class="card-body">
+            <h2>{{ event.name }}</h2>
+
+            <p><strong>📅 Date:</strong> {{ event.event_date }}</p>
+            <p><strong>📍 Location:</strong> {{ event.location }}</p>
+
+            <hr>
+
+            <p>{{ event.description }}</p>
+
+            <a href="{% url 'events' %}" class="btn btn-secondary">
+                Back to Events
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

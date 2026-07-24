@@ -1,6 +1,99 @@
 {% extends "base.html" %}
 
+{% block title %}Contact{% endblock %}
+
 {% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2>Contact Us</h2>
+        <p class="text-muted">
+            We'd love to hear from you. Feel free to contact us.
+        </p>
+    </div>
+
+    <div class="row">
+
+        <!-- Contact Information -->
+        <div class="col-lg-5 mb-4">
+
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+
+                    <h4 class="mb-4">Get in Touch</h4>
+
+                    <p>
+                        <strong>📍 Address</strong><br>
+                        EventEase Pvt Ltd<br>
+                        Kochi, Kerala
+                    </p>
+
+                    <p>
+                        <strong>📞 Phone</strong><br>
+                        +91 98765 43210
+                    </p>
+
+                    <p>
+                        <strong>✉ Email</strong><br>
+                        support@eventease.com
+                    </p>
+
+                    <p>
+                        <strong>🕒 Working Hours</strong><br>
+                        Monday - Saturday<br>
+                        9:00 AM - 6:00 PM
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+
+                    <h4 class="mb-4">Send us a Message</h4>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="5" placeholder="Write your message"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary w-100">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 {% endblock%}

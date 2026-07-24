@@ -8,6 +8,7 @@ class Event(models.Model):
     img=models.ImageField(upload_to='pic')
     name=models.CharField(max_length=50)
     description=models.TextField()
+    location=models.CharField(max_length=100)
     event_date=models.DateField()
     event_time=models.TimeField()
 
