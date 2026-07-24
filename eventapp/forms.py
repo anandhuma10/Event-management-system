@@ -12,4 +12,4 @@ class BookingForm(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = contact
-        fields = "__all__"
+        fields = '__all__'

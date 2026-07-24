@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <h2 class="text-center mb-4">Login</h2>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input
+                                type="text"
+                                name="username"
+                                class="form-control"
+                                placeholder="Enter your username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input
+                                type="text"
+                                name="Email"
+                                class="form-control"
+                                placeholder="Enter your Email ID"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control"
+                                placeholder="Enter your password"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"> Confirm Password</label>
+                            <input
+                                type="password"
+                                name="confirmpassword"
+                                class="form-control"
+                                placeholder="confirm password"
+                                required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Register
+                        </button>
+                    </form>
+
+                    <hr>
+
+                  
+                    {% for message in messages %}
+                    <script>
+                        alert('{{message}}');
+                    <script>
+                    {% endfor%}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
