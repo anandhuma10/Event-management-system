@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
-from .models import Event
+from .models import Event,Booking
 from . forms import BookingForm,ContactForm
 
 # Create your views here.
@@ -30,27 +30,37 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
+
 @login_required(login_url='login')
 def booking(request):
-    if request.method=="POST":
-        form=BookingForm(request.POST)
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+
         if form.is_valid():
-            form.save()
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
             return redirect('/')
 
+    else:
+        form = BookingForm()
 
-    form=BookingForm()
-    dict_form={
-        'form':form
-    }
-
-
-    return render(request, 'booking.html',dict_form)
+    return render(request, 'booking.html', {
+        'form': form
+    })
 
 
 @login_required(login_url='login')
 def event_detail(request,id):
     event = get_object_or_404(Event, id=id)
     return render(request, "event_detail.html", {"event": event})
+
+@login_required(login_url='login')
+def my_bookings(request):
+    bookings = Booking.objects.filter(user=request.user)
+
+    return render(request, 'my_bookings.html', {
+        'bookings': bookings
+    })
 
 
