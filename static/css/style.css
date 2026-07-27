@@ -31,3 +31,113 @@
         height:180px;
     }
 }
+
+
+
+/* Body */
+body{
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Card */
+.auth-card{
+    width:100%;
+    max-width:500px;
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+/* Card Body */
+.card-body{
+    padding:40px;
+    background:#fff;
+}
+
+/* Logo */
+.logo{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #0d6efd;
+}
+
+/* Heading */
+.auth-title{
+    font-weight:700;
+    color:#0d6efd;
+}
+
+.auth-subtitle{
+    color:#6c757d;
+    margin-bottom:25px;
+}
+
+/* Tabs */
+.nav-pills .nav-link{
+    border-radius:30px;
+    font-weight:600;
+    color:#0d6efd;
+}
+
+.nav-pills .nav-link.active{
+    background:#0d6efd;
+}
+
+/* Labels */
+.form-label{
+    font-weight:600;
+}
+
+/* Inputs */
+.form-control{
+    height:48px;
+    border-radius:10px;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:#0d6efd;
+}
+
+/* Buttons */
+.btn{
+    border-radius:10px;
+    height:48px;
+    font-weight:600;
+}
+
+/* Alerts */
+.alert{
+    border-radius:10px;
+}
+
+/* Back link */
+.back-home{
+    text-decoration:none;
+    font-weight:600;
+}
+
+.back-home:hover{
+    text-decoration:underline;
+}
+
+/* Mobile */
+@media(max-width:576px){
+
+    .auth-card{
+        margin:20px;
+    }
+
+    .card-body{
+        padding:25px;
+    }
+
+}

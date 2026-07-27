@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.contrib.auth.decorators import login_required
 from .models import Event
 from . forms import BookingForm,ContactForm
 
@@ -7,10 +8,12 @@ from . forms import BookingForm,ContactForm
 def index(request):
     return render(request, "index.html")
 
+@login_required(login_url='login')
 def events(request):
     events = Event.objects.all()
     return render(request, 'events.html', {'events': events})
 
+@login_required(login_url='login')
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -23,9 +26,11 @@ def contact(request):
     return render(request, "contact.html", {"form": form})
 
 
+@login_required(login_url='login')
 def about(request):
     return render(request, 'about.html')
 
+@login_required(login_url='login')
 def booking(request):
     if request.method=="POST":
         form=BookingForm(request.POST)
@@ -42,6 +47,8 @@ def booking(request):
 
     return render(request, 'booking.html',dict_form)
 
+
+@login_required(login_url='login')
 def event_detail(request,id):
     event = get_object_or_404(Event, id=id)
     return render(request, "event_detail.html", {"event": event})
