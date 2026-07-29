@@ -1,0 +1,15 @@
+.gallery-img {
+  width: 100%;          /* Forces image to span card width */
+  height: 240px;        /* Forces a uniform height across all cards */
+  object-fit: cover;    /* Crops the image center beautifully without stretching */
+  border-top-left-radius: 16px;   /* Matches the luxe-card top corners */
+  border-top-right-radius: 16px;  /* Matches the luxe-card top corners */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  filter: brightness(0.9);
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+

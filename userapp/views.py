@@ -34,7 +34,7 @@ def auth_page(request):
                     )
 
                     messages.success(request, "Account created successfully")
-                    return redirect("auth_page")
+                    return redirect("/")
 
             else:
                 messages.error(request, "Passwords do not match")

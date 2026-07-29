@@ -7,24 +7,23 @@ from . forms import BookingForm,ContactForm,ReviewForm
 # Create your views here.
    
 def index(request):
-    events = Event.objects.all()
-    reviews = Review.objects.select_related("event", "user").order_by("-created_at")
+    events = Event.objects.all()[:3]   # featured events
+    reviews = Review.objects.select_related("event", "user").order_by("-created_at")[:6]
 
     return render(request, "index.html", {
         "events": events,
         "reviews": reviews,
     })
 
+
 @login_required(login_url='login')
 def events(request):
-
     events = Event.objects.all()
-    reviews = Review.objects.select_related("event", "user").order_by("-created_at")[:10]
 
-    return render(request, "index.html", {
-    "events": events,
-    "reviews": reviews,
-})
+    return render(request, "events.html", {
+        "events": events,
+    })
+
     
 
 @login_required(login_url='login')
@@ -65,9 +64,12 @@ def booking(request):
 
 
 @login_required(login_url='login')
-def event_detail(request,id):
+def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
-    return render(request, "event_detail.html", {"event": event})
+
+    return render(request, "event_detail.html", {
+        "event": event,
+    })
 
 @login_required(login_url='login')
 def my_bookings(request):

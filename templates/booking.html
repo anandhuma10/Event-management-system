@@ -13,17 +13,33 @@
 
                 <div class="card-body p-4">
 
-                    <form action="" method="POST">
-                        {% csrf_token %}
+                   <form method="POST">
+    {% csrf_token %}
 
-                        {{ form.as_p }}
+    <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        {{ form.customer_name }}
+    </div>
 
-                        <div class="d-grid mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                Book Now
-                            </button>
-                        </div>
-                    </form>
+    <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        {{ form.phone_number }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Select Event</label>
+        {{ form.event }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Booking Date</label>
+        {{ form.booking_date }}
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+        Book Now
+    </button>
+</form>
 
                 </div>
 

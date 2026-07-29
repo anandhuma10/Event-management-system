@@ -1,45 +1,46 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+
+        <div class="col-lg-7">
 
             <div class="card shadow-lg border-0 rounded-4">
-                <div class="card-header bg-primary text-white text-center">
-                    <h3>Write a Review</h3>
+
+                <div class="card-header bg-warning text-dark text-center py-3">
+                    <h3>Leave a Review</h3>
                 </div>
 
                 <div class="card-body p-4">
+
+                    <h5 class="mb-4">{{ event.name }}</h5>
 
                     <form method="POST">
                         {% csrf_token %}
 
                         <div class="mb-3">
-                            <label class="form-label fw-bold">
-                                Rating
-                            </label>
+                            <label class="form-label">{{ form.rating.label }}</label>
                             {{ form.rating }}
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-bold">
-                                Comment
-                            </label>
+                            <label class="form-label">{{ form.comment.label }}</label>
                             {{ form.comment }}
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100">
+                        <button type="submit" class="btn btn-warning w-100">
                             Submit Review
                         </button>
-
                     </form>
 
                 </div>
+
             </div>
 
         </div>
+
     </div>
 </div>
 

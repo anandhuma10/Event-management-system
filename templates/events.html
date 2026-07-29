@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_head %}
+  <!-- 2. This links your external file correctly using the Django template engine -->
+  <link rel="stylesheet" href="{% static 'css/event.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <div class="container py-5">
