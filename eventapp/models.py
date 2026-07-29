@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Event(models.Model):
 
 
-    img=models.ImageField(upload_to='pic')
+    img = models.ImageField(upload_to='img')
     name=models.CharField(max_length=50)
     description=models.TextField()
     location=models.CharField(max_length=100)

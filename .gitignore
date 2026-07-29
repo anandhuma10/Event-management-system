@@ -11,5 +11,3 @@ db.sqlite3
 # Environment variables
 .env
 
-# User uploads
-media/

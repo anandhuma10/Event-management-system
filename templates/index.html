@@ -113,11 +113,13 @@
                         <span class="d-block fw-bold text-primary small mb-0" style="line-height:1.1;">{{ event.event_date|date:"b"|upper }}</span>
                         <span class="fs-5 fw-bold" style="line-height:1.1;">{{ event.event_date|date:"d" }}</span>
                     </div>
-                    {% if event.img %}
-                    <img src="{{ event.img.url }}" class="card-img-top" alt="{{ event.name }}" style="height: 240px; object-fit: cover;">
-                    {% else %}
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="Stage Event"> 
-                    {% endif %}
+                    
+                        {% if event.img %}
+                        <img src="{{ event.img.url }}" 
+                            class="card-img-top"
+                            alt="{{ event.name }}"
+                            style="height:240px; object-fit:cover;">
+                        {% endif %}
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold mb-2 text-white">{{ event.name }}</h5>
                         <p class="card-text text-muted mb-1 small"><i class="fas fa-map-marker-alt me-2 text-danger"></i>{{ event.location }}</p>
