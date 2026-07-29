@@ -9,23 +9,33 @@ def auth_page(request):
         # Register
         if action == "register":
             username = request.POST.get("username")
+            first_name = request.POST.get("first_name")
+            last_name = request.POST.get("last_name")
             email = request.POST.get("email")
             password = request.POST.get("password")
             confirmpassword = request.POST.get("confirmpassword")
-
+                        
+                                
+                     
             if password == confirmpassword:
                 if User.objects.filter(username=username).exists():
                     messages.error(request, "Username already exists")
+
                 elif User.objects.filter(email=email).exists():
                     messages.error(request, "Email already exists")
+
                 else:
                     User.objects.create_user(
                         username=username,
+                        first_name=first_name,
+                        last_name=last_name,
                         email=email,
                         password=password
                     )
+
                     messages.success(request, "Account created successfully")
-                    return redirect("login")
+                    return redirect("auth_page")
+
             else:
                 messages.error(request, "Passwords do not match")
 
@@ -44,7 +54,8 @@ def auth_page(request):
 
     return render(request, "auth.html")
 
-#logout
+
+# Logout
 def user_logout(request):
     auth.logout(request)
     messages.success(request, "Logged out successfully")

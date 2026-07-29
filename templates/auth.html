@@ -28,6 +28,7 @@
                      alt="EventEase">
 
                 <h2 class="auth-title mt-3">LUXE EVENTS</h2>
+                <h3 style="color:red;">TEST TEMPLATE 12345</h3>
                 <p class="auth-subtitle">
                     Welcome! Login or create your account.
                 </p>
@@ -79,10 +80,10 @@
                         <div class="mb-3">
                             <label class="form-label">Username</label>
                             <input type="text"
-                                   class="form-control"
-                                   name="username"
-                                   placeholder="Enter username"
-                                   required>
+                                class="form-control"
+                                name="username"
+                                placeholder="Choose a username"
+                                required>
                         </div>
 
                         <div class="mb-4">
@@ -109,16 +110,25 @@
 
                         {% csrf_token %}
                         <input type="hidden" name="action" value="register">
-
                         <div class="mb-3">
                             <label class="form-label">Username</label>
                             <input type="text"
-                                   class="form-control"
-                                   name="username"
-                                   placeholder="Choose a username"
-                                   required>
+                                class="form-control"
+                                name="username"
+                                placeholder="Choose a username"
+                                required>
                         </div>
-
+                        
+                        <div class="mb-3">
+                            <label class="form-label">First name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Last name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                        </div>
+                       
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email"

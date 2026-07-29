@@ -1,17 +1,31 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Event,Booking
-from . forms import BookingForm,ContactForm
+from .models import Event,Booking, Review
+from . forms import BookingForm,ContactForm,ReviewForm
 
 # Create your views here.
    
 def index(request):
-    return render(request, "index.html")
+    events = Event.objects.all()
+    reviews = Review.objects.select_related("event", "user").order_by("-created_at")
+
+    return render(request, "index.html", {
+        "events": events,
+        "reviews": reviews,
+    })
 
 @login_required(login_url='login')
 def events(request):
+
     events = Event.objects.all()
-    return render(request, 'events.html', {'events': events})
+    reviews = Review.objects.select_related("event", "user").order_by("-created_at")[:10]
+
+    return render(request, "index.html", {
+    "events": events,
+    "reviews": reviews,
+})
+    
 
 @login_required(login_url='login')
 def contact(request):
@@ -64,3 +78,34 @@ def my_bookings(request):
     })
 
 
+
+
+
+@login_required(login_url='login')
+def add_review(request, event_id):
+    event = get_object_or_404(Event, id=event_id)
+
+    review = Review.objects.filter(
+        event=event,
+        user=request.user
+    ).first()
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.event = event
+            review.save()
+
+            messages.success(request, "Your review has been saved.")
+            return redirect("event_detail", id=event.id)
+
+    else:
+        form = ReviewForm(instance=review)
+
+    return render(request, "review_form.html", {
+        "form": form,
+        "event": event,
+    })
