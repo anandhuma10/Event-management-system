@@ -1,0 +1,98 @@
+[
+{
+  "model": "eventapp.event",
+  "pk": 1,
+  "fields": {
+    "img": "pic/images_2_Aphdtfz.jpg",
+    "name": "Global Citizen Festival (2026)",
+    "description": "Shakira Delivered an energetic headlining set wearing a sparkling, sheer bodysuit. She opened with “She Wolf” and closed with “Hips Don't Lie”.\r\nCardi B Co-headlined the New York stage alongside Shakira.\r\nSupport Lineup  Features performances by Tyla, Ayra Starr, Mariah the Scientist, Camilo, and Elyanna.",
+    "location": "Hyderabad",
+    "event_date": "2026-11-13",
+    "event_time": "07:01:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 3,
+  "fields": {
+    "img": "pic/media-desktop-the-bansuri-circle-0-2026-7-11-t-5-9-16.avif",
+    "name": "The Bansuri Circle",
+    "description": "An intimate musical evening featuring renowned flautist Rajesh Cherthala (who trained under Pandit Hariprasad Chaurasia). He will perform classical, film, and fusion pieces for a limited guest list The Bansuri Circle.",
+    "location": "Chakolas Pavilion, Kalamassery, Kochi",
+    "event_date": "2026-07-24",
+    "event_time": "06:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 4,
+  "fields": {
+    "img": "pic/01KXD3P0FB96ZE0Z9B8FCKR74C.png",
+    "name": "Glam Up 2026",
+    "description": " Step into the world of beauty at Glam Up 2026! From makeup and skincare to fragrances and personal care, explore the finest products and innovations from top global and homegrown brands. Be part of India's ultimate beauty bash and celebrate the future of beauty.\r\n\r\n\r\nDon't miss a single moment! Experience a full day of excitement.",
+    "location": "Lulu Bolgatty International Convention Center (LBICC), Kochi",
+    "event_date": "2026-07-25",
+    "event_time": "11:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 5,
+  "fields": {
+    "img": "pic/739809519_4492144711001021_4236577735225304760_n.jpg",
+    "name": "Adarsh Geethanjali Musical Night",
+    "description": "Music that Inspires. Service that Transforms\r\nRotary Cochin Central is proud to associate with Adarsh Charitable Trust to present an unforgettable Musical Night with the legendary K S Chitra, Madhu Balakrishnan and a team of 20+ eminent musicians—an evening where every note brings hope and every contribution creates a lasting impact.\r\nJoin us in supporting a noble cause dedicated to God's children while experiencing the magic of one of India's most cherished voices.\r\n Admission through Donation Passes:\r\n Rs.3,000 – Front Seats\r\n Rs.2,000 – General Seats\r\n Donations are eligible for tax deduction under Section 80G.\r\nWe invite you to be a part of this meaningful initiative. Please book your Donation Pass and help us spread the word by sharing this post with your family, friends, and colleagues.\r\nTogether, let's turn music into hope and compassion into action.\r\n#rotarycochincentral #kschithra #musicalnight #charityconcert #ServeToChangeLivess #rotaryinternational #giveback #MusicForACause #adarshcharitablefoundation #rotarydistrict3205 #CreateLastingImpact",
+    "location": "Gokulam Convention Centre - kaloor,Kochi",
+    "event_date": "2026-07-25",
+    "event_time": "06:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 6,
+  "fields": {
+    "img": "pic/media-desktop-the-great-indian-science-festival-2026-0-2026-7-21-t-11-6-17.avif",
+    "name": "The Great Indian Science Festival 2026",
+    "description": "An expansive interactive festival designed for children and families. “One Small Step Into CSM Kochi, One Giant Leap For Your Child's Imagination.”. It features astronaut simulations, space exploration paths, galaxy models, and rocket-launching workshops.",
+    "location": "Centre Square Mall, Rajaji Road, Ernakulam, Kochi",
+    "event_date": "2026-07-25",
+    "event_time": "12:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 7,
+  "fields": {
+    "img": "pic/6af9970f-15c8-44f0-888e-2fd77fc441fe.avif",
+    "name": "Parenthood Expo 2026",
+    "description": "A dedicated community exhibition bringing together children's brands, parent care products, expert panels, and entertainment stalls.",
+    "location": "Kaloor, Ernakulam, Kochi All Events & Activities happening in Aluva - Townscript.",
+    "event_date": "2026-08-01",
+    "event_time": "07:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 8,
+  "fields": {
+    "img": "pic/media-desktop-vineeth-sreenivasan-musical-night-aaravam-0-2026-7-12-t-7-5-46.avif",
+    "name": "Aaravam: Vineeth Sreenivasan Musical Night",
+    "description": "A high-energy live performance by beloved playback singer, actor, and director Vineeth Sreenivasan. The event features a curated setlist of his top cinematic hits backed by a full live band.",
+    "location": "Base Eleven Convention Centre, Pala, Kottayam.",
+    "event_date": "2026-08-28",
+    "event_time": "19:00:00"
+  }
+},
+{
+  "model": "eventapp.event",
+  "pk": 9,
+  "fields": {
+    "img": "pic/dcp36pbyxehqueqzn3gh.webp",
+    "name": "Food-On Fest",
+    "description": "Introducing Food-On Fest by Kochi Mercato - a first-of-its-kind food festival bringing together 40+ restaurants, cafés, home bakers, and food brands under one roof.\r\n\r\nLaunching alongside the much-loved Pink Market - Luxe Edit, Food-On Fest introduces a dedicated festival experience exclusively for food, celebrating Kerala’s vibrant culinary scene in all its flavors.\r\n\r\nWhether you’re an established favourite or an emerging food venture, this is your opportunity to showcase your brand to thousands of visitors and food enthusiasts.",
+    "location": "Taj Vivanta, Kochi",
+    "event_date": "2026-08-02",
+    "event_time": "12:00:00"
+  }
+}
+]
