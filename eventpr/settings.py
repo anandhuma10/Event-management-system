@@ -22,10 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m6i)^p=mx7ctflysvpfq9o=tw+0qsh#il4yxuz&iya34h+h4&3'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-m6i)^p=mx7ctflysvpfq9o=tw+0qsh#il4yxuz&iya34h+h4&3')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
+
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -37,14 +39,22 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # 1. Cloudinary storage must go first
+    'cloudinary_storage',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    
+    # 2. Standard staticfiles goes here (ONLY ONCE)
+    'django.contrib.staticfiles', 
+    
+    # 3. Third-party and local apps go last
+    'cloudinary',
     'eventapp',
-    'userapp'
+    'userapp',
 ]
 
 MIDDLEWARE = [
@@ -133,9 +143,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATICFILES_STORAGE = (
-    "whitenoise.storage.CompressedManifestStaticFilesStorage"
-)
 
 
 
@@ -144,9 +151,25 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+
+
 # Authentication
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'khr7znnh'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '434436436125692'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'FewptO6xrchBuc8op6SYn8shy9k'),
+}
