@@ -91,9 +91,15 @@ WSGI_APPLICATION = 'eventpr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-if os.getenv("RENDER"):
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if DATABASE_URL:
     DATABASES = {
-        "default": dj_database_url.config()
+        "default": dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 else:
     DATABASES = {
